@@ -1,0 +1,96 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>登录</title>
+    <link rel="stylesheet" href="./static/css/azia.css"/>
+    <link rel="stylesheet" href="./static/css/style.css"/>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="login_body">
+<div class="login_form">
+    <div class="az-signin-wrapper">
+        <div class="az-card-signin">
+            <div class="signin-right">
+                <div class="login_title">
+                    <h2>网乐票</h2>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <input
+                                type="text"
+                                class="form-control mycontrol"
+                                placeholder="请输入登录账号"
+                                name="Account"
+                                id="Account"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                                type="password"
+                                class="form-control mycontrol"
+                                placeholder="请输入登录密码"
+                                name="Password"
+                                id="Password"
+                        />
+                    </div>
+                    <div class="form-forget">
+                        <span>忘记密码？请联系管理员！</span>
+                    </div>
+                    <div>
+                        <button class="btn" onclick="Login()">登录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/azia.js"></script>
+<script src="./static/js/jquery-2.1.4.js"></script>
+<script type="text/javascript">
+    /**
+     * @return {boolean}
+     */
+    Login = function () {
+        var Account = document.getElementById("Account").value;
+        var Password = document.getElementById("Password").value;
+        var Admin = "Account=" + Account + "&Password=" + Password;
+        if (!$.trim(Account)) {
+            alert("Account null!");
+            return false;
+        } else if (!$.trim(Password)) {
+            alert("Password null!");
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            url: "login/check",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            data: Admin,
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 0) {
+                    window.location.href = "bus.html";
+                } else {
+                    alert(data.msg);
+                }
+            }
+        });
+    };
+    //防止页面后退
+    history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+    });
+</script>
+</body>
+</html>

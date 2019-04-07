@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>商家管理</title>
+    <link rel="stylesheet" href="./static/css/azia.css"/>
+    <link rel="stylesheet" href="./static/css/style.css"/>
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-color: #EDF1F2;
+        }
+    </style>
+</head>
+<body class="">
+<div class="az-header">
+    <div class="container">
+        <div class="az-header-left">
+            <div id="azMenuShow1">
+                <img
+                        src="./static/images/logo.png"
+                        class="logo"
+                        id="azMenuShow"
+                />网乐票管理系统
+            </div>
+            <a href="" id="azMenuShow2" class="az-header-menu-icon d-lg-none">
+                <span></span>
+            </a>
+            <a href="" id="azContentBodyHide" class="az-header-arrow d-md-none">
+                <i class="icon ion-md-arrow-back"></i>
+            </a>
+        </div>
+        <!-- az-header-left -->
+        <div class="az-header-menu">
+            <ul class="nav">
+                <li class="nav-item active show">
+                    <a href="" class="nav-link">商家管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">网乐票管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">规则管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">维护管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">退出</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="table_data dataTables_wrapper">
+    <div class="search">
+        <input type="text" name="" id="" placeholder="搜索..."/>
+    </div>
+    <div class="addBusiness">
+        <div>
+            <img class="shang" src="images/shang.png"/>共有<span>10</span>个商家
+        </div>
+        <div data-toggle="modal" data-target="#modaldemo2">
+            添加商家
+        </div>
+    </div>
+    <table>
+        <thead>
+        <tr class="th">
+            <th>
+                <input
+                        type="checkbox"
+                        id="checkboxAll"
+                        name="checkboxAll"
+                        onclick="checkbox()"
+                />
+            </th>
+
+            <th>商家名称</th>
+            <th>手机号</th>
+            <th>创建时间</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <input
+                        type="checkbox"
+                        name="checkboxBtn"
+                        value="38"
+                        onclick="checkboxBtn()"
+                />
+            </td>
+            <td>趁机</td>
+            <td>18898377754</td>
+            <td>2019.07.09</td>
+            <td>
+                <button class=" btn-green btn-xs" onclick="GoUpdate(31)">
+                    修改
+                </button>
+                <button class="btn-green btn-xs" onclick="GoDetails(31)">
+                    详情
+                </button>
+                <button class=" btn-danger btn-xs" onclick="del(31)">删除</button>
+            </td>
+            <td>
+                <button
+                        class=" btn-yellow btn-xs"
+                        onclick="GoBusLogin(38,'陈记')"
+                >
+                    查看员工
+                </button>
+                <button class="btn-yellow btn-xs" onclick="GoWollarTicket(38)">
+                    查看网乐票
+                </button>
+            </td>
+        </tr>
+        <tr class="margin">
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td>
+                <input
+                        type="checkbox"
+                        name="checkboxBtn"
+                        value="38"
+                        onclick="checkboxBtn()"
+                />
+            </td>
+            <td>趁机</td>
+            <td>18898377754</td>
+            <td>2019.07.09</td>
+            <td>
+                <button class=" btn-green btn-xs" onclick="GoUpdate(31)">
+                    修改
+                </button>
+                <button class="btn-green btn-xs" onclick="GoDetails(31)">
+                    详情
+                </button>
+                <button class=" btn-danger btn-xs" onclick="del(31)">删除</button>
+            </td>
+            <td>
+                <button
+                        class=" btn-yellow btn-xs"
+                        onclick="GoBusLogin(38,'陈记')"
+                >
+                    查看员工
+                </button>
+                <button class="btn-yellow btn-xs" onclick="GoWollarTicket(38)">
+                    查看网乐票
+                </button>
+            </td>
+        </tr>
+        <tr class="margin">
+            <td colspan="6"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="tf">
+        <input type="hidden" id="PageSize" value="10"/>
+        <button class=" btn-white btn-xs" onclick="Show(1)">首页</button>
+        <button class=" btn-white btn-xs" onclick="PageUp()">上一页</button>
+
+        当前第:
+        <select id="PageNum" onchange="PageSelect()"
+        >
+            <option value="1">1</option>
+        </select
+        >页
+        <button class=" btn-white btn-xs" onclick="PageDown()">下一页</button>
+        <button class=" btn-white btn-xs" onclick="LastPage()">尾页</button>
+        总条数:
+    </div>
+</div>
+<!-- 模态框 -->
+<div id="modaldemo2" class="modal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Notice</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking at its layout. </p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn-indigo">确定</button>
+                <button type="button" class="btn-outline-light" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div><!-- modal-dialog -->
+</div>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/bootstrap.bundle.min.js"></script>
+<script src="./static/js/azia.js"></script>
+</body>
+</html>

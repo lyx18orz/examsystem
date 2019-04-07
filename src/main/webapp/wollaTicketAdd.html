@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>添加网乐票</title>
+    <link rel="stylesheet" href="./static/css/azia.css"/>
+    <link rel="stylesheet" href="./static/css/style.css"/>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="login_body">
+<div class="az-header">
+    <div class="container">
+        <div class="az-header-left">
+            <!-- <a href="index.html" class="az-logo">
+                  <span></span>网乐票管理系统</a> -->
+
+            <div id="azMenuShow1">
+                <img src="./static/images/logo.png" class="logo" id="azMenuShow"/>网乐票管理系统
+            </div>
+            <a href="" id="azContentBodyHide" class="az-header-arrow d-md-none">
+                <i class="icon ion-md-arrow-back"></i>
+            </a>
+        </div>
+        <!-- az-header-left -->
+        <div class="az-header-menu">
+            <ul class="nav">
+                <li class="nav-item active show">
+                    <a class="nav-link" onclick="Go('/bus.html','')">商家管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="Go('/rule.html','')">规则管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="Go('/maintenance.html','')">维护管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="ExitLogin()">退出</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>
+
+    <div class="az-body-content">
+        <div class="form-list">
+            <label class="form-label">商家名称：</label>
+            <div class="input-block"><select class="form-control"></select></div>
+        </div>
+        <div class="form-list">
+            <label class="form-label">票名称：</label>
+            <div class="input-block"><input type="text" class="form-control "/></div>
+
+        </div>
+        <div class="form-list">
+            <label class="form-label">面值：</label>
+            <div class="input-block"><input type="text" class="form-control "/></div>
+        </div>
+
+        <div class="form-list">
+            <label class="form-label">有效期：</label>
+            <div class="input-block">
+                <input type="text" class="form-control "/>至
+                <input type="text" class="form-control "/>
+            </div>
+        </div>
+
+        <div class="form-list">
+            <label class="form-label">描述：</label>
+            <div class="input-block"><input type="text" class="form-control "/></div>
+        </div>
+
+        <div class="form-list">
+            <label class="form-label">发行数：</label>
+            <div class="input-block"><input type="text" class="form-control "/></div>
+        </div>
+
+        <div class="form-list">
+            <label class="form-label">状态：</label>
+            <div class="input-block">
+                <select class="form-control">
+                    <option value="">审核</option>
+                    <option value="">发布</option>
+                    <option value="">回收</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="addW">
+            <button>添加网乐票</button>
+        </div>
+    </div>
+</div>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/azia.js"></script>
+</body>
+</html>

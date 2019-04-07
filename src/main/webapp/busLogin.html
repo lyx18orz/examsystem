@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>商家管理</title>
+    <link rel="stylesheet" href="./static/css/azia.css"/>
+    <link rel="stylesheet" href="./static/css/style.css"/>
+    <style>
+        /*html,*/
+        body {
+            height: 100%;
+            background-color: #EDF1F2;
+        }
+    </style>
+</head>
+<body class="">
+<div class="az-header">
+    <div class="container">
+        <div class="az-header-left">
+            <div id="azMenuShowDiv">
+                <img
+                        src="./static/images/logo.png"
+                        class="logo"
+                        id="azMenuShowImg"
+                />网乐票管理系统
+            </div>
+            <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none">
+                <span></span>
+            </a>
+            <a href="" id="azContentBodyHide" class="az-header-arrow d-md-none">
+                <i class="icon ion-md-arrow-back"></i>
+            </a>
+        </div>
+        <!-- az-header-left -->
+        <div class="az-header-menu">
+            <ul class="nav">
+                <li class="nav-item active show">
+                    <a class="nav-link" onclick="Go('/bus.html','')">商家管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="Go('/rule.html','')">规则管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="Go('/maintenance.html','')">维护管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="ExitLogin()">退出</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="table_data dataTables_wrapper">
+    <div class="search">
+
+        <input type="text" name="Content" id="Content" placeholder="搜索." onchange="Show()"/>
+    </div>
+    <div class="addBusiness">
+        <input id="BusinessID" type="hidden">
+        <div><img class="shang" src="./static/images/shang.png"/>当前商家:
+            <button class="  btn-xs" id=""><div id="BusinessName"></div></button>
+        </div>
+        <div onclick="ShowAddChar()">添加帐号</div>
+    </div>
+    <table>
+        <thead>
+        <tr class="th">
+            <th>
+                <input
+                        type="checkbox"
+                        id="checkboxAll"
+                        name="checkboxAll"
+                        onclick="checkbox()"
+                />
+            </th>
+
+            <th>帐号</th>
+            <th>密码</th>
+            <th>微信昵称</th>
+            <th>微信头像</th>
+            <th>OpenID</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="tablebody">
+
+        </tbody>
+    </table>
+    <div class="tf" id="pageDiv">
+        <input type="hidden" id="TotalRows">
+        <button class=" btn-white btn-xs" onclick="Show(1)">首页</button>
+        <button class=" btn-white btn-xs" onclick="PageUp()">上一页</button>
+
+        当前第:
+        <input id="PageNum" onchange="Show()" value="1" style="width: 20px">页
+        <button class=" btn-white btn-xs" onclick="PageDown()">下一页</button>
+        <button class=" btn-white btn-xs" onclick="LastPage()">尾页</button>
+        总条数:
+        <input type="text" id="TotalPages" value="0" style="width: 30px" readonly>
+    </div>
+    <div id="msgDiv"></div>
+</div>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/azia.js"></script>
+<script src="./static/js/jquery-2.1.4.js"></script>
+<script src="./static/js/utils.js"></script>
+<script src="./static/js/busLogin.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>考试</title>
+    <link rel="stylesheet" href="./static/css/azia.css"/>
+    <link rel="stylesheet" href="./static/css/style.css"/>
+    <style>
+        /*html,*/
+        body {
+            height: 100%;
+            background-color: #EDF1F2;
+        }
+    </style>
+</head>
+<body>
+<div id="formStart" style="display:block" align="center">
+    <div class="login_title">
+        <h2>考前须知</h2>
+        <h3>考试时间为30分钟.</h3>
+    </div>
+    <input type="button" onclick="Start()" value="开始考试"/>
+</div>
+<div id="DivTable" style="display:none" align="centre">
+    <div>
+        当前第<input type="text" id="ModalID" value="1">题:
+        <form id="formid">
+            <div id="tablebody" align="left"></div>
+        </form>
+
+    </div>
+    <div class="modal-footer justify-content-center">
+        <button type="button" class="btn-indigo btn-rounded" onclick="Up()">上一题</button>
+        <button type="button" class="btn-indigo btn-rounded" onclick="Down()">下一题</button>
+    </div>
+    <div id="But">
+
+    </div>
+    <div align="center">
+        <button type="button" data-toggle="modal" data-target="#SubmitModal" style="background:red" class="btn-indigo btn-rounded">结束考试</button>
+    </div>
+    <div id="msgDiv">
+    </div>
+</div>
+<div id="SubmitModal" class="modal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">修改</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn-indigo" onclick="Submit()">确认</button>
+                <button type="button" class="btn-outline-light" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div><!-- modal-dialog -->
+</div>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/jquery-2.1.4.js"></script>
+<script src="./static/js/azia.js"></script>
+<script src="./static/js/utils.js"></script>
+<script src="./static/js/bootstrap.bundle.min.js"></script>
+<script src="./static/js/exam.js"></script>
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>
